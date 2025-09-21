@@ -66,3 +66,43 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* Center page content vertically below navbar */
+body {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* Page headings */
+h1 {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+/* Navbar tweaks */
+nav {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  background-color: #333;
+}
+
+nav a {
+  color: #84cce9;
+  margin: 0 1rem;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #646cff;
+}
+
+/* Footer tweaks */
+footer {
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+  background-color: #333;
+  color: #84cce9;
+}
+
