@@ -9,7 +9,6 @@ import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 import NotFound from "./pages/NotFound";
 import "./styles/main.scss";
-
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(

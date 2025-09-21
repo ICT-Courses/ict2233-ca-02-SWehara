@@ -4,12 +4,12 @@ export default function Navbar() {
   const linkStyle = ({ isActive }) => ({
     margin: "0 1rem",
     textDecoration: "none",
-    color: isActive ? "#646cff" : "#fff", // active link color
+    color: isActive ? "#00ccffff" : "#fff", // active link color
     fontWeight: isActive ? "bold" : "normal",
   });
 
   return (
-    <nav style={{ display: "flex", justifyContent: "center", padding: "1rem", backgroundColor: "#333" }}>
+    <nav style={{ display: "flex", justifyContent: "center", padding: "1rem", backgroundColor: "#020d30ff" }}>
       <NavLink to="/" style={linkStyle} end>Home</NavLink>
       <NavLink to="/about" style={linkStyle}>About</NavLink>
       <NavLink to="/projects" style={linkStyle}>Projects</NavLink>
