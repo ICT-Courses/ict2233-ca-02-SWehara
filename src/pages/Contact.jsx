@@ -1,7 +1,8 @@
-export default function Contacts() {
+export default function Contact() {
   return (
     <div style={{ textAlign: "center", marginTop: "2rem" }}>
-      <h1>Contacts Page</h1>
+      <h1>Get in touch</h1>
+      <h2>Contact me</h2>
 
       <p>Reach me via:</p>
       <p>

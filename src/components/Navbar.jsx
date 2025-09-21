@@ -13,7 +13,7 @@ export default function Navbar() {
       <NavLink to="/" style={linkStyle} end>Home</NavLink>
       <NavLink to="/about" style={linkStyle}>About</NavLink>
       <NavLink to="/projects" style={linkStyle}>Projects</NavLink>
-      <NavLink to="/contacts" style={linkStyle}>Contacts</NavLink>
+      <NavLink to="/contact" style={linkStyle}>Contact</NavLink>
     </nav>
   );
 }
