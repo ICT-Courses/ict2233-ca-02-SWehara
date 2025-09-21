@@ -10,10 +10,10 @@ export default function Navbar() {
 
   return (
     <nav style={{ display: "flex", justifyContent: "center", padding: "1rem", backgroundColor: "#020d30ff" }}>
-      <NavLink to="/" style={linkStyle} end>Home</NavLink>
-      <NavLink to="/about" style={linkStyle}>About</NavLink>
-      <NavLink to="/projects" style={linkStyle}>Projects</NavLink>
-      <NavLink to="/contact" style={linkStyle}>Contact</NavLink>
+      <NavLink to="/" style={linkStyle} end> 🏡Home</NavLink>
+      <NavLink to="/about" style={linkStyle}> 👩🏽About</NavLink>
+      <NavLink to="/projects" style={linkStyle}>🖥️Projects</NavLink>
+      <NavLink to="/contact" style={linkStyle}>📞Contact</NavLink>
     </nav>
   );
 }
