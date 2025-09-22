@@ -34,8 +34,7 @@ export default function Projects() {
                 rel="noreferrer"
                 className="text-blue-400 hover:text-blue-500 transition-colors duration-300"
               >
-                View Repo
-              </a>
+                Check more 👉🏽              </a>
               <span className="text-sm">{repo.stargazers_count} ★</span>
             </div>
           </div>
