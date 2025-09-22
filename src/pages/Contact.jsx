@@ -12,14 +12,14 @@ export default function Contact() {
 
     emailjs
       .send(
-        "service_q1hgtba",   // <-- replace with your EmailJS Service ID
-        "template_7ti3ek9",  // <-- replace with your EmailJS Template ID
+        "service_q1hgtba",   // <-- your EmailJS Service ID
+        "template_7ti3ek9",  // <-- your EmailJS Template ID
         {
           from_name: form.name,
           from_email: form.email,
           message: form.message,
         },
-        "VgycizdDPx-RE58nE"    // <-- replace with your EmailJS Public Key
+        "VgycizdDPx-RE58nE"  // <-- your EmailJS Public Key
       )
       .then(
         () => {
@@ -34,13 +34,12 @@ export default function Contact() {
   };
 
   return (
-    <div className="flex flex-col items-center min-h-screen bg-gray-900 p-8 text-white">
+    <div className="flex flex-col items-center min-h-screen bg-gray-900 dark:bg-gray-800 p-8 text-white transition-colors duration-300">
       <h1 className="text-4xl font-bold mb-8">Get in touch</h1>
 
       {status.ok === true && (
         <p className="text-green-400 text-lg mb-4">{status.msg}</p>
       )}
-
       {status.ok === false && (
         <p className="text-red-400 text-lg mb-4">{status.msg}</p>
       )}
@@ -53,7 +52,7 @@ export default function Contact() {
             value={form.name}
             onChange={(e) => setForm({ ...form, name: e.target.value })}
             required
-            className="p-3 rounded-lg bg-gray-800 text-white border border-gray-700"
+            className="p-3 rounded-lg bg-gray-800 dark:bg-gray-700 text-white border border-gray-700 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
           />
         </label>
 
@@ -64,7 +63,7 @@ export default function Contact() {
             value={form.email}
             onChange={(e) => setForm({ ...form, email: e.target.value })}
             required
-            className="p-3 rounded-lg bg-gray-800 text-white border border-gray-700"
+            className="p-3 rounded-lg bg-gray-800 dark:bg-gray-700 text-white border border-gray-700 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
           />
         </label>
 
@@ -75,7 +74,7 @@ export default function Contact() {
             onChange={(e) => setForm({ ...form, message: e.target.value })}
             required
             rows={6}
-            className="p-3 rounded-lg bg-gray-800 text-white border border-gray-700"
+            className="p-3 rounded-lg bg-gray-800 dark:bg-gray-700 text-white border border-gray-700 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
           />
         </label>
 
@@ -93,7 +92,7 @@ export default function Contact() {
           href="https://github.com/SWehara"
           target="_blank"
           rel="noreferrer"
-          className="text-blue-500 hover:underline"
+          className="text-blue-400 dark:text-blue-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
         >
           GitHub
         </a>
@@ -101,13 +100,13 @@ export default function Contact() {
           href="https://www.linkedin.com/in/senuri-wehara-a339461a4"
           target="_blank"
           rel="noreferrer"
-          className="text-blue-500 hover:underline"
+          className="text-blue-400 dark:text-blue-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
         >
           LinkedIn
         </a>
         <a
           href="mailto:senuriwehara03@gmail.com"
-          className="text-blue-500 hover:underline"
+          className="text-blue-400 dark:text-blue-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
         >
           Email
         </a>
