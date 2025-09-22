@@ -24,7 +24,7 @@ export default function About() {
           <li>Teamwork and collaboration</li>
           <li>Time management</li>
           <li>Adaptability and learning new technologies</li>
-           <li>Problem-solving and analytical thinking</li>
+          <li>Problem-solving and analytical thinking</li>
         </ul>
       </div>
     </div>

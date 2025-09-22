@@ -1,14 +1,49 @@
-/* src/styles/main.scss */
+// src/styles/main.scss
 
-/* Custom hero section tweaks */
-.hero-text {
-  line-height: 1.6;
-  color: #ffffff; // a light gray for text
+// SCSS variables
+$primary: #2563eb; // blue-600
+$secondary: #9333ea; // purple-600
+
+// Mixin for reusable card style
+@mixin card {
+  background: rgba(31, 41, 55, 0.8); // gray-800/80
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
-.hero-image {
-  border: 3px solid #ffd6d6;
-  padding: 4px;
+// Example button style with nesting
+.btn {
+  @include card;
+  display: inline-block;
+  font-weight: 600;
+  color: white;
+  background-color: $primary;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: darken($primary, 10%);
+  }
+
+  &--secondary {
+    background-color: $secondary;
+
+    &:hover {
+      background-color: darken($secondary, 10%);
+    }
+  }
 }
 
+// Animate gradient background with keyframes
+@keyframes gradient-move {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient-bg {
+  background: linear-gradient(270deg, $primary, $secondary, #ec4899);
+  background-size: 600% 600%;
+  animation: gradient-move 15s ease infinite;
+}
 

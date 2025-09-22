@@ -18,12 +18,7 @@ export default function Home() {
           </p>
 
           {/* Call-to-action button */}
-          <Link
-            to="/contact"
-            className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-lg transition"
-          >
-            Say Hello 📞
-          </Link>
+          <Link to="/contact" className="btn">Say Hello 📞</Link>
         </div>
 
         {/* Right side - image */}
