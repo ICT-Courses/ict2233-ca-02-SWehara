@@ -1,5 +1,6 @@
 import React from "react";
 import useFetchGitHubRepos from "../hooks/useFetchGitHubRepos";
+import projectImages from "../data/projectImages";
 
 export default function Projects() {
   const githubUser = "SWehara";
@@ -25,8 +26,18 @@ export default function Projects() {
             key={repo.id}
             className="bg-gray-800/80 dark:bg-gray-700/80 text-white p-6 rounded-xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
           >
+            {/* Project Image */}
+            <img
+              src={projectImages[repo.name] || projectImages.default}
+              alt={repo.name}
+              className="w-full h-40 object-cover rounded-lg mb-4"
+            />
+
+            {/* Title and Description */}
             <h2 className="text-2xl font-semibold mb-2">{repo.name}</h2>
             <p className="mb-4">{repo.description || "No description provided."}</p>
+
+            {/* Links */}
             <div className="flex justify-between items-center">
               <a
                 href={repo.html_url}
@@ -34,7 +45,8 @@ export default function Projects() {
                 rel="noreferrer"
                 className="text-blue-400 hover:text-blue-500 transition-colors duration-300"
               >
-                Check more 👉🏽              </a>
+                Check more 👉🏽
+              </a>
               <span className="text-sm">{repo.stargazers_count} ★</span>
             </div>
           </div>
