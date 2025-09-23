@@ -12,14 +12,14 @@ export default function About() {
       <div className="max-w-4xl w-full bg-gray-800/80 p-8 rounded-xl shadow-lg">
         <h1 className="text-4xl font-bold mb-4 text-center">About Me</h1>
         <p className="text-lg mb-4">
-          I am a second year undergraduate following a BSc. Hons in IT degree at the University of Sri Jayewardenepura, Sri Lanka.
-          I'm passionate about technology, problem-solving, and learning new skills. I have a strong interest in
-          software development, web technologies, and creating useful solutions.
+          Hi, I’m Senuri Wehara from Gampaha, Sri Lanka.
+          I’m a second year IT undergraduate at the Department of ICT, University of Sri Jayewardenepura.</p>
+          <p className="text-lg mb-4">Beyond coding and technology, I enjoy volunteering, hosting, and travelling to explore new experiences. I’m passionate about learning, connecting with people, and growing both personally and professionally.
         </p>
 
         {/* Technical Skills */}
-        <h2 className="text-2xl font-semibold mt-6 mb-4">Technical Skills</h2>
-        <div className="grid grid-cols-4 sm:grid-cols-6 gap-6 mb-6 text-center">
+        <h2 className="text-2xl font-semibold mt-6 mb-8 text-center">Technical Skills</h2>
+        <div className="grid grid-cols-6 sm:grid-cols-6 gap-6 mb-6 text-center">
           <FaPython className="text-yellow-400 text-5xl" />
           <FaCode className="text-purple-500 text-5xl" /> {/* C# */}
           <SiJavascript className="text-yellow-500 text-5xl" />
@@ -37,7 +37,7 @@ export default function About() {
         </div>
 
         {/* Soft Skills */}
-        <h2 className="text-2xl font-semibold mt-6 mb-4">Soft Skills</h2>
+        <h2 className="text-2xl font-semibold mt-6 mb-8 text-center">Soft Skills</h2>
         <div className="flex flex-wrap gap-3">
           <span className="bg-gray-700 px-4 py-2 rounded-full text-sm">Teamwork & Collaboration</span>
           <span className="bg-gray-700 px-4 py-2 rounded-full text-sm">Time Management</span>

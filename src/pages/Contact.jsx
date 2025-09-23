@@ -9,25 +9,43 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Super simple validation
+    if (!form.name.trim()) {
+      setStatus({ submitting: false, ok: false, msg: "Please enter your name." });
+      return;
+    }
+
+    if (!form.email.trim() || !form.email.includes("@") || !form.email.includes(".")) {
+      setStatus({ submitting: false, ok: false, msg: "Please enter a valid email." });
+      return;
+    }
+
+    if (!form.message.trim()) {
+      setStatus({ submitting: false, ok: false, msg: "Please enter a message." });
+      return;
+    }
+
+    // Proceed to send
     setStatus({ submitting: true, ok: null, msg: "" });
 
     emailjs
       .send(
-        "service_q1hgtba",   // <-- your EmailJS Service ID
-        "template_7ti3ek9",  // <-- your EmailJS Template ID
+        "service_q1hgtba",
+        "template_7ti3ek9",
         {
           from_name: form.name,
           from_email: form.email,
           message: form.message,
         },
-        "VgycizdDPx-RE58nE"  // <-- your EmailJS Public Key
+        "VgycizdDPx-RE58nE"
       )
       .then(
         () => {
           setStatus({
             submitting: false,
             ok: true,
-            msg: "Message sent! I’ll get back to you soon."
+            msg: "Message sent! I’ll get back to you soon.",
           });
           setForm({ name: "", email: "", message: "" });
         },
@@ -36,7 +54,7 @@ export default function Contact() {
           setStatus({
             submitting: false,
             ok: false,
-            msg: "Failed to send. Please try again."
+            msg: "Failed to send. Please try again.",
           });
         }
       );
@@ -101,37 +119,35 @@ export default function Contact() {
       </form>
 
       {/* Social Links Section */}
-<div className="flex flex-col w-full max-w-md divide-y divide-gray-700 items-center">
-  <a
-    href="https://www.linkedin.com/in/senuri-wehara-a339461a4"
-    target="_blank"
-    rel="noreferrer"
-    className="flex items-center gap-3 py-3 text-blue-400 hover:text-blue-500 transition-colors"
-  >
-    <FaLinkedin size={26} />
-    <span>Let’s connect professionally on LinkedIn</span>
-  </a>
+      <div className="flex flex-col w-full max-w-md divide-y divide-gray-700 items-center">
+        <a
+          href="https://www.linkedin.com/in/senuri-wehara-a339461a4"
+          target="_blank"
+          rel="noreferrer"
+          className="flex items-center gap-3 py-3 text-blue-400 hover:text-blue-500 transition-colors"
+        >
+          <FaLinkedin size={26} />
+          <span>Let’s connect professionally on LinkedIn</span>
+        </a>
 
-  <a
-    href="https://github.com/SWehara"
-    target="_blank"
-    rel="noreferrer"
-    className="flex items-center gap-3 py-3 text-blue-400 hover:text-blue-500 transition-colors"
-  >
-    <FaGithub size={26} />
-    <span>Explore my projects on GitHub</span>
-  </a>
+        <a
+          href="https://github.com/SWehara"
+          target="_blank"
+          rel="noreferrer"
+          className="flex items-center gap-3 py-3 text-blue-400 hover:text-blue-500 transition-colors"
+        >
+          <FaGithub size={26} />
+          <span>Explore my projects on GitHub</span>
+        </a>
 
-  <a
-    href="mailto:senuriwehara03@gmail.com"
-    className="flex items-center gap-3 py-3 text-blue-400 hover:text-blue-500 transition-colors"
-  >
-    <FaEnvelope size={26} />
-    <span>Drop me an email anytime</span>
-  </a>
-</div>
-
-
-  </div>
-  )
+        <a
+          href="mailto:senuriwehara03@gmail.com"
+          className="flex items-center gap-3 py-3 text-blue-400 hover:text-blue-500 transition-colors"
+        >
+          <FaEnvelope size={26} />
+          <span>Drop me an email anytime</span>
+        </a>
+      </div>
+    </div>
+  );
 }

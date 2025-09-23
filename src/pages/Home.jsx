@@ -28,7 +28,7 @@ export default function Home() {
           <img
             src={myPhoto}
             alt="Senuri Wehara"
-            className="w-32 md:w-48 mx-auto hero-image rounded-full"
+            className="w-32 md:w-48 mx-auto rounded-full border-4 border-blue-500"
           />
         </div>
       </div>
