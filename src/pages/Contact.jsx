@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import "../styles/main.scss";
 
 export default function Contact() {
@@ -23,12 +24,20 @@ export default function Contact() {
       )
       .then(
         () => {
-          setStatus({ submitting: false, ok: true, msg: "Message sent! I’ll get back to you soon." });
+          setStatus({
+            submitting: false,
+            ok: true,
+            msg: "Message sent! I’ll get back to you soon."
+          });
           setForm({ name: "", email: "", message: "" });
         },
         (error) => {
           console.error(error);
-          setStatus({ submitting: false, ok: false, msg: "Failed to send. Please try again." });
+          setStatus({
+            submitting: false,
+            ok: false,
+            msg: "Failed to send. Please try again."
+          });
         }
       );
   };
@@ -44,7 +53,11 @@ export default function Contact() {
         <p className="text-red-400 text-lg mb-4">{status.msg}</p>
       )}
 
-      <form onSubmit={handleSubmit} className="flex flex-col w-full max-w-md gap-3 mb-8">
+      {/* Contact Form */}
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col w-full max-w-md gap-3 mb-8"
+      >
         <label className="flex flex-col">
           <span className="text-sm mb-1">Your Name</span>
           <input
@@ -87,31 +100,38 @@ export default function Contact() {
         </button>
       </form>
 
-      <div className="flex gap-6">
-        <a
-          href="https://github.com/SWehara"
-          target="_blank"
-          rel="noreferrer"
-          className="text-blue-400 dark:text-blue-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
-        >
-          GitHub
-        </a>
-        <a
-          href="https://www.linkedin.com/in/senuri-wehara-a339461a4"
-          target="_blank"
-          rel="noreferrer"
-          className="text-blue-400 dark:text-blue-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
-        >
-          LinkedIn
-        </a>
-        <a
-          href="mailto:senuriwehara03@gmail.com"
-          className="text-blue-400 dark:text-blue-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
-        >
-          Email
-        </a>
-      </div>
-    </div>
-  );
-}
+      {/* Social Links Section */}
+<div className="flex flex-col w-full max-w-md divide-y divide-gray-700 items-center">
+  <a
+    href="https://www.linkedin.com/in/senuri-wehara-a339461a4"
+    target="_blank"
+    rel="noreferrer"
+    className="flex items-center gap-3 py-3 text-blue-400 hover:text-blue-500 transition-colors"
+  >
+    <FaLinkedin size={26} />
+    <span>Let’s connect professionally on LinkedIn</span>
+  </a>
 
+  <a
+    href="https://github.com/SWehara"
+    target="_blank"
+    rel="noreferrer"
+    className="flex items-center gap-3 py-3 text-blue-400 hover:text-blue-500 transition-colors"
+  >
+    <FaGithub size={26} />
+    <span>Explore my projects on GitHub</span>
+  </a>
+
+  <a
+    href="mailto:senuriwehara03@gmail.com"
+    className="flex items-center gap-3 py-3 text-blue-400 hover:text-blue-500 transition-colors"
+  >
+    <FaEnvelope size={26} />
+    <span>Drop me an email anytime</span>
+  </a>
+</div>
+
+
+  </div>
+  )
+}
