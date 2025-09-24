@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom/client"; // ✅ this is important
+import ReactDOM from "react-dom/client"; 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";

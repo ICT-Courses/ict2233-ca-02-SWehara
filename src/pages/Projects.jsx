@@ -24,20 +24,17 @@ export default function Projects() {
         {repos.map((repo) => (
           <div
             key={repo.id}
-            className="bg-gray-800/80 dark:bg-gray-700/80 text-white p-6 rounded-xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
-          >
-            {/* Project Image */}
+            className="bg-gray-800/80 dark:bg-gray-700/80 text-white p-6 rounded-xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+        
             <img
               src={projectImages[repo.name] || projectImages.default}
               alt={repo.name}
               className="w-full h-40 object-cover rounded-lg mb-4"
             />
 
-            {/* Title and Description */}
             <h2 className="text-2xl font-semibold mb-2">{repo.name}</h2>
-            <p className="mb-4">{repo.description || "No description provided."}</p>
+            <p className="mb-6">{repo.description || "No description provided."}</p>
 
-            {/* Links */}
             <div className="flex justify-between items-center">
               <a
                 href={repo.html_url}

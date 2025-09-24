@@ -9,8 +9,6 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Super simple validation
     if (!form.name.trim()) {
       setStatus({ submitting: false, ok: false, msg: "Please enter your name." });
       return;
@@ -26,7 +24,6 @@ export default function Contact() {
       return;
     }
 
-    // Proceed to send
     setStatus({ submitting: true, ok: null, msg: "" });
 
     emailjs
@@ -71,11 +68,9 @@ export default function Contact() {
         <p className="text-red-400 text-lg mb-4">{status.msg}</p>
       )}
 
-      {/* Contact Form */}
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col w-full max-w-md gap-3 mb-8"
-      >
+        className="flex flex-col w-full max-w-md gap-3 mb-8">
         <label className="flex flex-col">
           <span className="text-sm mb-1">Your Name</span>
           <input
@@ -109,16 +104,9 @@ export default function Contact() {
           />
         </label>
 
-        <button
-          type="submit"
-          disabled={status.submitting}
-          className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-lg transition disabled:opacity-60"
-        >
-          {status.submitting ? "Sending..." : "Send Message"}
-        </button>
-      </form>
-
-      {/* Social Links Section */}
+       <button type="submit" disabled={status.submitting} className="px-6 py-2 rounded-lg font-semibold text-white bg-blue-600 dark:bg-blue-700 hover:bg-blue-700 dark:hover:bg-blue-800 transition-colors duration-300 disabled:opacity-60"> {status.submitting ? "Sending..." : "Send Message"}
+       </button>
+       </form>
       <div className="flex flex-col w-full max-w-md divide-y divide-gray-700 items-center">
         <a
           href="https://www.linkedin.com/in/senuri-wehara-a339461a4"

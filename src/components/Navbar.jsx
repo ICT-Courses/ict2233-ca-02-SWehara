@@ -1,17 +1,7 @@
 import { NavLink } from "react-router-dom";
 import DarkModeToggle from "./DarkModeToggle";
-import { useEffect, useState } from "react";
 
 export default function Navbar() {
-  const [dark, setDark] = useState(() => {
-    return document.body.classList.contains("dark");
-  });
-
-  const toggleDark = () => {
-    setDark(!dark);
-    document.body.classList.toggle("dark");
-  };
-
   const linkStyle = ({ isActive }) => ({
     margin: "0 0.75rem",
     textDecoration: "none",
@@ -22,20 +12,15 @@ export default function Navbar() {
   });
 
   return (
-    <nav className={`navbar ${dark ? "dark" : ""}`} style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "0.75rem 1rem" }}>
-      <div style={{ display: "flex", alignItems: "center" }}>
+    <nav className="navbar flex items-center justify-center p-3 relative bg-gray-900 dark:bg-gray-800 transition-colors duration-300">
+      <div className="flex items-center">
         <NavLink to="/" style={linkStyle} end>🏡 Home</NavLink>
         <NavLink to="/about" style={linkStyle}>👩🏽 About</NavLink>
         <NavLink to="/projects" style={linkStyle}>🖥️ Projects</NavLink>
         <NavLink to="/contact" style={linkStyle}>📞 Contact</NavLink>
       </div>
-      <div style={{ marginLeft: "1rem", position: "absolute", right: "1rem" }}>
-        <button
-          onClick={toggleDark}
-          className="ml-4 px-3 py-1 rounded-md border border-gray-700 text-sm"
-        >
-          {dark ? "🌙 Dark" : "☀️ Light"}
-        </button>
+      <div className="absolute right-4">
+        <DarkModeToggle />
       </div>
     </nav>
   );

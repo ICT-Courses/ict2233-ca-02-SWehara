@@ -4,7 +4,6 @@ import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 export default function Footer() {
   return (
     <footer className="p-6 text-center bg-gray-900 dark:bg-gray-800 text-white transition-colors duration-300">
-      {/* Social Links */}
       <div className="flex justify-center space-x-6 mb-3">
         <a
           href="https://github.com/SWehara"
@@ -29,8 +28,6 @@ export default function Footer() {
           <FaEnvelope size={20} />
         </a>
       </div>
-
-      {/* Copyright */}
       <div>
         © {new Date().getFullYear()} Senuri Wehara. All rights reserved
       </div>

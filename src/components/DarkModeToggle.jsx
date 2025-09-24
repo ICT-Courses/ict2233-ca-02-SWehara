@@ -1,38 +1,29 @@
 import React, { useEffect, useState } from "react";
 
 export default function DarkModeToggle() {
-  const [dark, setDark] = useState(() => {
-    try {
-      const stored = localStorage.getItem("theme");
-      if (stored) return stored === "dark";
-      return true; // default to dark
-    } catch {
-      return true;
-    }
+  const [darkMode, setDarkMode] = useState(() => {
+    const saved = localStorage.getItem("darkMode");
+    return saved ? JSON.parse(saved) : false;
   });
 
   useEffect(() => {
-    const root = document.documentElement;
     const body = document.body;
 
-    if (dark) {
-      root.classList.add("dark");
+    if (darkMode) {
       body.classList.add("dark");
-      localStorage.setItem("theme", "dark");
     } else {
-      root.classList.remove("dark");
       body.classList.remove("dark");
-      localStorage.setItem("theme", "light");
     }
-  }, [dark]);
+
+    localStorage.setItem("darkMode", JSON.stringify(darkMode));
+  }, [darkMode]);
 
   return (
     <button
-      aria-label="Toggle dark mode"
-      onClick={() => setDark(d => !d)}
-      className="ml-4 px-3 py-1 rounded-md border border-gray-700 text-sm"
+      onClick={() => setDarkMode(!darkMode)}
+      className="px-4 py-2 rounded-lg bg-gray-200 dark:bg-gray-800 text-black dark:text-white transition-colors duration-300"
     >
-      {dark ? "🌙 Dark" : "☀️ Light"}
+      {darkMode ? "Light Mode" : "Dark Mode"}
     </button>
   );
 }

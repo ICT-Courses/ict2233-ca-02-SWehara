@@ -1,10 +1,4 @@
 import { useEffect, useState } from "react";
-
-/**
- * Custom hook to fetch GitHub repositories for a user
- * @param {string} username - GitHub username
- * @param {number} perPage - Number of repos to fetch (default 6)
- */
 export default function useFetchGitHubRepos(username, perPage = 6) {
   const [repos, setRepos] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -13,7 +7,7 @@ export default function useFetchGitHubRepos(username, perPage = 6) {
   useEffect(() => {
     if (!username) return;
 
-    let cancelled = false; // to prevent state update after unmount
+    let cancelled = false;
 
     async function fetchRepos() {
       setLoading(true);
@@ -40,7 +34,7 @@ export default function useFetchGitHubRepos(username, perPage = 6) {
     fetchRepos();
 
     return () => {
-      cancelled = true; // cleanup function to prevent memory leaks
+      cancelled = true;
     };
   }, [username, perPage]);
 

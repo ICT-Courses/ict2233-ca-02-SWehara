@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-
-
 export default function NotFound() {
   return (
     <div className="flex flex-col min-h-screen bg-gray-900 dark:bg-gray-800 text-white transition-colors duration-300">
@@ -12,8 +10,7 @@ export default function NotFound() {
         </p>
         <Link
           to="/"
-          className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white font-semibold px-6 py-2 rounded-lg transition"
-        >
+          className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white font-semibold px-6 py-2 rounded-lg transition">
           Go back to Home
         </Link>
       </div>
